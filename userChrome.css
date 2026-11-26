@@ -1,0 +1,128 @@
+@charset "UTF-8";
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+/* BEGIN CSS */
+
+/* 1. Base Grayscale Glass Effect for Toolbars and Unselected Tabs */
+#navigator-toolbox,
+#toolbar-menubar,
+#TabsToolbar,
+.tab-background:not([selected]) {
+    background-image: linear-gradient(
+        to bottom,
+        #252a2e 0%,
+        #020303 1.28%,
+        #000000 2.56%,
+        #050505 3.85%,
+        #0f0f0f 5.13%,
+        #2c2c2d 6.41%,
+        #464648 7.69%,
+        #505052 8.97%,
+        #525253 10.26%,
+        #4f4f50 11.54%,
+        #4f4f51 41.03%,
+        #505052 42.31%,
+        #515153 43.59%,
+        #535355 44.87%,
+        #575759 46.15%,
+        #49494b 48.72%,
+        #373739 50.0%,
+        #252526 51.28%,
+        #262627 52.56%,
+        #2a2a2b 53.85%,
+        #2d2d2f 55.13%,
+        #313133 56.41%,
+        #353536 57.69%,
+        #38383a 58.97%,
+        #3c3c3d 60.26%,
+        #3e3e40 61.54%,
+        #404042 62.82%,
+        #424244 64.1%,
+        #444445 65.38%,
+        #454547 66.67%,
+        #474749 67.95%,
+        #49494a 69.23%,
+        #4a4a4c 70.51%,
+        #4c4c4e 71.79%,
+        #4e4e4f 73.08%,
+        #4f4f50 74.36%,
+        #505052 75.64%,
+        #525254 76.92%,
+        #545456 78.21%,
+        #565657 79.49%,
+        #575759 80.77%,
+        #59595b 82.05%,
+        #5a5b5c 83.33%,
+        #5b5c5e 84.62%,
+        #5c5d5f 85.9%,
+        #5e5f61 87.18%,
+        #5f6062 88.46%,
+        #616163 89.74%,
+        #626364 91.03%,
+        #636466 92.31%,
+        #666668 93.59%,
+        #6c6d6f 94.87%,
+        #5d5d5e 96.15%,
+        #3d3d3d 97.44%,
+        #34373b 98.72%,
+        #3f4951 100%
+    ) !important;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+}
+
+/* 2. Colorized Purple/Magenta Glass Effect for Selected Tabs (No Borders/Shadows) */
+.tab-background:is([selected], [multiselected]) {
+    background-image: url("tab-glass.png") !important;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+/* Force all unselected/background tab labels to pure white */
+.tabbrowser-tab:not([selected]) .tab-text {
+    color: #ffffff !important;
+}
+
+/* NAV-BAR */
+#nav-bar {
+  background:
+    linear-gradient(to bottom,
+      #02070b 0 1px, #545a56 1px 2px, #383c3d 2px 3px)
+      center top / 100% 3px no-repeat,
+    linear-gradient(to bottom,
+      #1f2122 0 1px, #010506 1px 2px, #1d2021 2px 3px)
+      center bottom / 100% 3px no-repeat,
+    linear-gradient(to bottom, #373737, #262a2a) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* NAV-BAR TEXT ENTRY BOX */
+#urlbar {
+  border: 4px solid transparent !important;
+  border-radius: 16px !important;
+  background:
+    linear-gradient(to bottom, #131313, #5B4C62) padding-box,
+    linear-gradient(to bottom, #030303, #777777) border-box !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* NAV-BAR - REMOVE TEXTFIELD BACKGROUND MAKE TRANSPARENT */
+/* inner box Firefox paints over your gradient */
+#urlbar > .urlbar-background,
+#urlbar[focused] > .urlbar-background,
+#urlbar[open] > .urlbar-background,
+#urlbar:hover > .urlbar-background {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* the text field and its wrapper */
+#urlbar-input-container,
+#urlbar-input,
+#urlbar-input-container:hover,
+#urlbar-input:hover {
+  background: transparent !important;
+}
